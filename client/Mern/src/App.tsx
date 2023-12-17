@@ -17,7 +17,6 @@ function App() {
     createRoutesFromElements(
       <Route path="/" element={<RootPage/>}>
         <Route index element = {<HomePage></HomePage>}></Route> 
-        
         <Route path="calculator" element= {<CalcPage/>}></Route> 
         <Route path="/quote" element = {<QuotePage></QuotePage>}></Route>
       </Route>
