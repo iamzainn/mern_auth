@@ -11,6 +11,8 @@ import {
   createRoutesFromElements,
   Route
 } from "react-router-dom";
+import CalcPage from "./Pages/CalcPage";
+import QuotePage from "./Pages/QuotePage";
 
 function App() {
   const router = createBrowserRouter(
@@ -18,7 +20,9 @@ function App() {
       <Route path="/" element={<RootPage/>}>
         <Route index element = {<HomePage></HomePage>}></Route> 
         <Route path="login" element ={<LoginPage></LoginPage>}></Route> 
-        <Route path="SignUp" element ={<SignUp></SignUp>}></Route> 
+        <Route path="SignUp" element ={<SignUp></SignUp>}></Route>
+        <Route path="calculator" element= {<CalcPage/>}></Route> 
+        <Route path="/quote" element = {<QuotePage></QuotePage>}></Route>
       </Route>
     )
   );
