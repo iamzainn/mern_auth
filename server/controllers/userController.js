@@ -25,7 +25,7 @@ const login = async(req,res,next)=>{
      const user = await User.findOne({email})
      if(user && await user.chkPassword(password)){
         createToken(res,user._id);
-       return res.status(200).json({"id":user._id,"message":"user login successfully"}); 
+       return res.status(200).json({"id":user._id,"name":user.username,"m":"user login successfully"}); 
      }
       res.status(400);
       throw new Error("provide correct credentials") 
