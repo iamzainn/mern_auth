@@ -32,7 +32,7 @@ const Calculator = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-8 p-4 bg-gray-200 rounded shadow-md">
+    <div className="max-w-md mx-auto mt-8 p-4 bg-gray-200 rounded shadow-md sm:max-w-xl">
       <div className="mb-4 text-left text-lg font-bold bg-slate-100 max-w-[100%]">{expression || '0'}</div>
       <div className="grid grid-cols-4 gap-2">
         {[7, 8, 9, '/'].map((value) => (

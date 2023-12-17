@@ -1,9 +1,7 @@
 import HomePage from "./Pages/HomePage";
 import RootPage from "./Pages/RootPage";
-import LoginPage from "./Pages/LoginPage";
-import SignUp from "./Pages/SignUp";
 
-import UserAuthContextProvider from "./Context/UserAuthContextProvider";
+
 
 import {
   createBrowserRouter,
@@ -19,17 +17,16 @@ function App() {
     createRoutesFromElements(
       <Route path="/" element={<RootPage/>}>
         <Route index element = {<HomePage></HomePage>}></Route> 
-        <Route path="login" element ={<LoginPage></LoginPage>}></Route> 
-        <Route path="SignUp" element ={<SignUp></SignUp>}></Route>
+        
         <Route path="calculator" element= {<CalcPage/>}></Route> 
         <Route path="/quote" element = {<QuotePage></QuotePage>}></Route>
       </Route>
     )
   );
   return (
-    <UserAuthContextProvider>
+   
     <RouterProvider router={router}/>
-    </UserAuthContextProvider>
+    
   
   )
 }
