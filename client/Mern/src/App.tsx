@@ -3,7 +3,6 @@ import RootPage from "./Pages/RootPage";
 import LoginPage from "./Pages/LoginPage";
 import SignUp from "./Pages/SignUp";
 
-import UserAuthContextProvider from "./Context/UserAuthContextProvider";
 
 import {
   createBrowserRouter,
@@ -23,9 +22,9 @@ function App() {
     )
   );
   return (
-    <UserAuthContextProvider>
+    
     <RouterProvider router={router}/>
-    </UserAuthContextProvider>
+    
   
   )
 }

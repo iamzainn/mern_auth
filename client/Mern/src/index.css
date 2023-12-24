@@ -2,7 +2,3 @@
 @tailwind components;
 @tailwind utilities;
 
-.active{
-    font-size: 1.2rem;
-    color: brown;
-}

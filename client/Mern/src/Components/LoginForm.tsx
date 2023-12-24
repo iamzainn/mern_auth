@@ -1,12 +1,14 @@
 
-import { useContextUser } from '../Context/UserAuthContextProvider';
 import React, { useState } from 'react';
 import {  Link,useNavigate } from 'react-router-dom';
-
+import { useDispatch } from 'react-redux';
+import { loginUser } from '../features/User/userSlice';
 const LoginForm: React.FC = () => {
+
+  const dispatch = useDispatch();
   const navigate = useNavigate();
-  console.log("login form");
-  const {setUser} = useContextUser();  
+ 
+ 
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -58,13 +60,13 @@ const LoginForm: React.FC = () => {
     }
 
     if (isValid) {
-      
-       const {id,name} = await login();
-       localStorage.setItem("id",id);
-      
-       setUser({id,name});
-       navigate("/");
 
+      const {name} =  await login();
+      
+      dispatch(loginUser(name))
+      setTimeout(() => {
+        navigate("/");
+      },1000);
     } else {
       setErrors(newErrors);
     }
